@@ -42,6 +42,7 @@ interface Props {
     typeInput: string;
     placeholderInput: string;
     valueInput: string | number;
+    maxLength?: string;
 
     //adicionar onchange events typescript
     onChange: (
@@ -63,7 +64,9 @@ const MyInput = ({
                 name={nameInput}
                 placeholder={placeholderInput}
                 value={valueInput}
-                maxLength={18}
+                maxLength={typeInput === 'text' ? 20 : undefined}
+                max={typeInput === 'number' ? 10 : undefined}
+                min={typeInput === 'number' ? 0 : undefined}
                 onChange={onChange}
             />
         </>

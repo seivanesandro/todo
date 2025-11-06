@@ -126,9 +126,9 @@ const TaskForm = ({
                     onChange={handleChange}
                 />
 
-                <label style={{marginTop: '0.5rem'}}>Prioridade da Tarefa</label>
+                <label style={{marginTop: '0.5rem'}}>Prioridade da Tarefa (0 - 10)</label>
                 <MyInput
-                    typeInput="text"
+                    typeInput="number"
                     nameInput="difficulty"
                     placeholderInput={
                         secondInputPlaceholder
