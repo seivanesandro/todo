@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Button = styled.input`
     padding: 10px 4.5rem;
-    margin-top: 1rem;
+    margin-top: 3rem;
     background-color: #89cff0;
     color: #444444;
     border: none;

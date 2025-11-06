@@ -130,6 +130,18 @@ span::selection {
     display: none !important;
 }
 
+@media only screen and (max-width: 1440px) {
+    .App-main-container {
+        width: 100%;
+        width: 100% !important;
+        padding: 2rem !important;
+        border-radius: 0 !important;
+        flex-direction: row;
+        align-items: center !important;
+        justify-content: flex-start !important;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .App {
         margin: 0 !important;
@@ -142,6 +154,7 @@ span::selection {
         flex-direction: column !important;
         align-items: center !important;
         justify-content: flex-start !important;
+        gap: 2rem !important;
     }
 
     .form {
@@ -149,6 +162,7 @@ span::selection {
         text-align: center !important;
         gap: 2rem;
     }
+
     h1,
     h2,
     h3,
@@ -160,20 +174,18 @@ span::selection {
         letter-spacing: 0.2rem;
         text-transform: uppercase;
     }
-    .list {
-        align-items: center;
-        text-align: justify;
-    }
+
 }
 
-@media only screen and (max-width: 1440px) {
-    .App-main-container {
-        width: 100%;
-        width: 100% !important;
-        padding: 2rem !important;
-        border-radius: 0 !important;
-        flex-direction: row;
-        align-items: center !important;
-        justify-content: flex-start !important;
+@media only screen and (max-width: 768px) {
+
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-size: 0.8em;
     }
+
 }

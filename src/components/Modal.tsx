@@ -6,55 +6,49 @@ import styled, {
 import { devices } from '../utils/constantes';
 
 const Show = keyframes`
-     0%{
-        top: -100%;
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -60%);
     }
-
-    100%{
+    100% {
         opacity: 1;
-         top: 13%;
+        transform: translate(-50%, -50%);
     }
-
 `;
 
 const ShowFade = keyframes`
-    0%{
-        top: -100%;
-        background: #000;
+    0% {
         opacity: 0;
     }
-    50%{
-        opacity: 0;
-    }
-
-    100%{
-         top: 0%;
-          opacity: 0.3!important;
+    100% {
+        opacity: 0.3;
     }
 `;
+
 const ContainerModal = styled.div`
     display: contents;
 `;
 
 const FadeStyle = styled.div`
-    width: 100%;
-    height: 100%;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background: #000;
-    animation: ${ShowFade} 2s forwards;
-    opacity: 0.3;
-    z-index: 1;
+    animation: ${ShowFade} 0.5s forwards;
+    z-index: 1000;
 `;
 
 const ModalStyle = styled.div`
-    position: absolute;
-    top: 13%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 800px;
     height: 600px;
-    z-index: 1;
+    padding: 2rem;
+    z-index: 1001;
     background: #fff;
     display: flex;
     flex-direction: column;
@@ -62,17 +56,27 @@ const ModalStyle = styled.div`
     align-items: center;
     text-align: center;
     gap: 2rem;
-    animation: ${Show} 2s forwards;
+    animation: ${Show} 0.5s ease-out forwards;
     box-shadow: 0 0 0.3rem #343434;
 
     @media only screen and (${devices.mobileG}) {
-        width: 320px !important;
-        height: 550px !important;
-        animation: ${Show} 2s forwards;
+        width: 90vw;
+        max-width: 320px;
+        height: auto;
+        min-height: 400px;
+        max-height: 90vh;
+        padding: 2rem;
+        overflow-y: auto;
     }
+    
     @media only screen and (${devices.tablet}) {
-        width: 500px;
-        height: 400px;
+        width: 90vw;
+        max-width: 500px;
+        height: auto;
+        min-height: 400px;
+        max-height: 90vh;
+        padding: 2rem;
+        overflow-y: auto;
     }
 `;
 
@@ -100,7 +104,7 @@ const Modal = ({ children }: Props) => {
     return (
         <ContainerModal
             id="modal"
-            className="hide"
+            className="hide container-modal"
         >
             <FadeStyle
                 className="fade-modal"

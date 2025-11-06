@@ -44,12 +44,13 @@ const ContainerTaskList = styled.div`
         transition: all 0.4s linear;
     }
 
-    @media only screen and (${devices.mobileG}) {
-        width: 100% !important;
-    }
     @media only screen and (${devices.portatil}) {
         width: 100%;
         padding: 1.5em 1em;
+    }
+    @media only screen and (${devices.mobileG}) {
+        width: 100% !important;
+        padding: 1.5em 2em !important;
     }
 `;
 
@@ -76,8 +77,6 @@ const ContainerTaskIconsAction = styled.div`
 
 const TaskTitleStyle = styled.h2`
     color: #5e5d5d;
-    font-size: 1.5rem;
-    font-family: monospace;
     letter-spacing: 0.1em;
     text-transform: capitalize;
 

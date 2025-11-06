@@ -24,7 +24,7 @@ const FormStyle = styled.form`
     @media only screen and (${devices.tablet}) {
         align-items: center !important;
         text-align: center !important;
-        gap: 2.5rem;
+        gap: 0.5rem;
     }
 `;
 
