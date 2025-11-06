@@ -2,6 +2,7 @@ import { ChangeEvent } from 'react';
 import styled from 'styled-components';
 
 const Input = styled.input`
+    box-sizing: border-box; 
     background: #fafafa;
     color: #3808f8;
     border: 1px solid #414345;
@@ -10,11 +11,12 @@ const Input = styled.input`
     padding: 8px 15px;
     outline: none;
     text-align: left;
+    margin-bottom: 1rem;
     transition: all 0.3s linear;
 
     &:focus {
         outline: #89cff0 solid;
-        border: #89cff0;
+        border:1px solid #89cff0;
         transition: all 0.1s forwards;
     }
 
@@ -24,7 +26,7 @@ const Input = styled.input`
             0 0 0.2rem #fafafa,
             0 0 0.1rem #89cff0;
         outline: #89cff0 solid;
-        border: #89cff0;
+        border:1px solid #89cff0;
         box-decoration-break: none;
         transition: all 0.1s forwards;
     }

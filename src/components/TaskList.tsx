@@ -30,11 +30,12 @@ const ContainerTaskList = styled.div`
     gap: 1rem;
     justify-content: space-between;
     padding: 2em 3em;
-    width: 180%;
-    max-width: 180%;
+    width: 100%;
+    max-width: 100%;
     border: 1px solid #ccc;
     border-radius: 1em;
     animation: ${Show} 1s linear;
+    box-sizing: border-box; 
 
     &:hover {
         border: 1px solid #a3a1a1;
@@ -47,7 +48,8 @@ const ContainerTaskList = styled.div`
         width: 100% !important;
     }
     @media only screen and (${devices.portatil}) {
-        width: 115%;
+        width: 100%;
+        padding: 1.5em 1em;
     }
 `;
 

@@ -19,7 +19,7 @@ const FormStyle = styled.form`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 2.8rem;
+    gap: 0.7rem;
 
     @media only screen and (${devices.tablet}) {
         align-items: center !important;
@@ -115,6 +115,7 @@ const TaskForm = ({
                 onSubmit={addTaskHandler}
                 className="form-container"
             >
+                <label>Adicione sua Tarefa</label>
                 <MyInput
                     typeInput="text"
                     nameInput="title"
@@ -125,6 +126,7 @@ const TaskForm = ({
                     onChange={handleChange}
                 />
 
+                <label style={{marginTop: '0.5rem'}}>Prioridade da Tarefa</label>
                 <MyInput
                     typeInput="text"
                     nameInput="difficulty"

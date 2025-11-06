@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 //style
 import styled, {
@@ -32,11 +32,17 @@ const AppContainerAnimation = styled.div`
 `;
 
 const App = () => {
-    const [taskList, setTaskList] = useState<
-        ITask[]
-    >([]);
+    const [taskList, setTaskList] = useState<ITask[]>(() => {
+        const stored = localStorage.getItem('taskList');
+    return stored ? JSON.parse(stored) : [];
+});
+
     const [taskToUpedate, setTaskToUpedate] =
         useState<ITask | null>(null);
+
+    useEffect(() => {
+        localStorage.setItem('taskList', JSON.stringify(taskList));
+    }, [taskList]);
 
     //remover tarefas
     const deleteTask = (id: number) => {
@@ -107,7 +113,7 @@ const App = () => {
                 <div className="form">
                     <h2>adicionar Tarefas</h2>
                     <TaskForm
-                        btnText="add tarefa"
+                        btnText="adicionar"
                         firstInputPlaceholder="Titulo da Tarefa"
                         secondInputPlaceholder="Nivel de Dificuldade"
                         taskList={taskList}

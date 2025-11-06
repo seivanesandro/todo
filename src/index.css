@@ -45,8 +45,8 @@ code {
 
     padding: 5rem;
     max-width: 100%;
-    min-height: 60vh; /* colar o fundo da imagem no ecran*/
-    width: 56%;
+    min-height: 60vh;
+    width: 76%;
 }
 
 .form {
